@@ -34,6 +34,7 @@ fun main(args: Array<String>) {
 
 @RestController
 class MessageController(val service: MessageService) {
+	@CrossOrigin(origins = ["http://localhost:5173"])
 	@GetMapping("/")
 	fun index(): List<Message> = service.findMessages()
 
