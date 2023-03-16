@@ -83,6 +83,7 @@ class FilmController(private val filmRepository: FilmRepository) {
 		filmRepository.save(film)
 
 
+	@CrossOrigin(origins = ["http://localhost:5173"])
 	@GetMapping("/films/{id}")
 	fun getFilmById(@PathVariable(value = "id") filmId: Long): ResponseEntity<Film> {
 		return filmRepository.findById(filmId).map { film ->
